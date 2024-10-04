@@ -1,6 +1,6 @@
 FROM ubuntu:22.04
 LABEL maintainer="Fedor Chulkov"
-RUN apt update -y && apt upgrade -y && apt install default-jdk -y && install maven -y && git -y
+RUN apt update -y && apt upgrade -y && apt install default-jdk -y && apt install maven -y && apt install git -y
 WORKDIR /opt
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
 ADD pom.xml /opt
