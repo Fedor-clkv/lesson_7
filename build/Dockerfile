@@ -1,11 +1,11 @@
 FROM ubuntu:22.04
-LABEL maintainer="Fedor Chulkov"
-RUN apt update -y && apt upgrade -y && apt install default-jdk -y && apt install maven -y && apt install git -y
+LABEL LABEL version="3" maintainer="Fedor Chulkov"
 WORKDIR /opt
+ENV PATH /bin/bash:$PATH
+RUN apt update -y && apt upgrade -y && apt install default-jdk -y && apt install maven -y && apt install git -y
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
 ADD pom.xml /opt
 WORKDIR /opt/boxfuse-sample-java-war-hello
-RUN rm /opt/boxfuse-sample-java-war-hello/pom.xml && mv /opt/pom.xml /opt/boxfuse-sample-java-war-hello/pom.xml && mvn package
-COPY /opt/boxfuse-sample-java-war-hello/target/hello-1.0.war /opt/
+RUN rm /opt/boxfuse-sample-java-war-hello/pom.xml && mv /opt/pom.xml /opt/boxfuse-sample-java-war-hello/pom.xml && mvn package && cp /opt/boxfuse-sample-java-war-hello/target/hello-1.0.war /opt 
 EXPOSE 8080
 CMD ["/bin/bash"]
