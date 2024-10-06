@@ -5,16 +5,17 @@ services:
       context: ./build
       dockerfile: Dockerfile
     volumes: 
-      - /opt:/opt
+      - vlm:/opt
   myapp:
     build:
       context: ./app
       dockerfile: Dockerfile
     volumes:
-      - /opt:/opt
+      - vlm:/opt
     restart: always
     ports:
       - 8080:46850
     depends_on:
       - buildapps
-  
+volumes:
+  vlm:
