@@ -1,12 +1,12 @@
 version: "3"
 services: 
-  building_apps:
+  buildapps:
     build:
       context: ./build
       dockerfile: Dockerfile
     volumes: 
       - /opt:/opt
-  my_app:
+  myapp:
     build:
       context: ./app
       dockerfile: Dockerfile
