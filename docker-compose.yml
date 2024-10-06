@@ -3,20 +3,22 @@ version: "3.1"
 services: 
   building_apps: 
     build:
+      container_name: building-application
       context: ./build
       dockerfile: Dockerfile
-    volumes: 
-      - ./vlm:/opt/vlm:rw
+      volumes: 
+        - ./vlm:/opt/vlm:rw
   
   my_app:
     build:
+      container_name: java-application
       context: ./app
       dockerfile: Dockerfile
+      volumes:
+        - ./vlm:/opt/vlm:rw
     restart: always
     ports:
       - 8080:46850
-    volumes:
-      - ./vlm:/opt/vlm:rw
     depends_on:
       - building_apps
   
