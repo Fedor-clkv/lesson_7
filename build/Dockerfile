@@ -12,4 +12,4 @@ CMD ["/bin/bash"]
 
 #ADD ./pom.xml /opt/
 #RUN rm /opt/boxfuse-sample-java-war-hello/pom.xml
-#RUN cp /opt/pom.xml /opt/boxfuse-sample-java-war-hello/pom.xml
+#RUN cp /opt/pom.xml /opt/boxfuse-sample-java-war-hello/pom.xml 
