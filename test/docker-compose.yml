@@ -1,0 +1,22 @@
+version: "3.1"
+
+services: 
+  building_apps: 
+    build:
+      dockerfile: /build/Dockerfile
+      context: .
+    volumes: 
+      - "./vlm:/opt/vlm"
+  
+  my_app:
+    build:
+      dockerfile: /app/Dockerfile
+      context: .
+    restart: always
+    ports:
+      -8080:46850
+    volumes:
+      - "./vlm:/opt/vlm"
+    depends_on:
+    - sbuilding_apps
+  
