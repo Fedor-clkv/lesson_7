@@ -16,5 +16,5 @@ services:
     ports:
       - 8080:46850
     depends_on:
-      - building_apps
+      - buildapps
   
