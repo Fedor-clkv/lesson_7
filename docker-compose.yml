@@ -6,14 +6,14 @@ services:
       context: ./build
       dockerfile: Dockerfile
     volumes: 
-      - vlm:/opt/vlm:rw
+      - vlm:/opt/:rw
   
   my_app:
     build:
       context: ./app
       dockerfile: Dockerfile
     volumes:
-      - vlm:/opt/vlm:rw
+      - vlm:/opt/:rw
     restart: always
     ports:
       - 8080:46850
