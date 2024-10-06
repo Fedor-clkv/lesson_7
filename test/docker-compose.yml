@@ -5,7 +5,6 @@ services:
     build:
       context: ./build
       dockerfile: Dockerfile
-
     volumes: 
       - "./vlm:/opt/vlm"
   
@@ -13,7 +12,6 @@ services:
     build:
       context: ./app
       dockerfile: Dockerfile
-
     restart: always
     ports:
       - 8080:46850
