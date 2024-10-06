@@ -2,7 +2,8 @@ version: "3"
 
 services: 
 
-  building_apps: 
+  building_apps:
+    container_name: bapp 
     build:
       context: ./build
       dockerfile: Dockerfile
@@ -10,6 +11,7 @@ services:
       - /opt:/opt
   
   my_app:
+    container_name: myapp
     build:
       context: ./app
       dockerfile: Dockerfile
