@@ -1,5 +1,6 @@
 FROM ubuntu:22.04
 LABEL LABEL version="3" maintainer="Fedor Chulkov"
+VOLUME /opt/vlm
 WORKDIR /opt
 ENV PATH /bin/bash:$PATH
 RUN apt update -y && apt upgrade -y && apt install default-jdk -y && apt install maven -y && apt install git -y && git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
