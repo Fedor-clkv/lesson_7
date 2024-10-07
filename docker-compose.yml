@@ -6,8 +6,8 @@ services:
       context: ./build
       dockerfile: Dockerfile
     volumes: 
-      - type: volume
-        source: diske
+      - type: bind
+        source: diskf
         target: /tmp
  
   myapp:
@@ -15,8 +15,8 @@ services:
       context: ./app
       dockerfile: Dockerfile
     volumes:
-      - type: volume
-        source: diske
+      - type: bind
+        source: diskf
         target: /usr/local/tomcat/webapps
     ports:
       - 46850:8080
@@ -27,4 +27,4 @@ services:
       - PATH=$CATALINA_HOME/bin:$PATH
 
 volumes:
-  diske:
+  diskf:
