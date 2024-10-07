@@ -19,3 +19,5 @@ services:
       - buildapps
 volumes:
   disk:
+    driver: local
+    name: disk
