@@ -8,7 +8,7 @@ RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
 WORKDIR /opt/boxfuse-sample-java-war-hello
 RUN mvn package
 #WORKDIR /opt/test
-#RUN cp /opt/boxfuse-sample-java-war-hello/target/hello-1.0.war /opt
+RUN cp /opt/boxfuse-sample-java-war-hello/target/hello-1.0.war /opt/les
 EXPOSE 8080
 CMD ["/bin/bash"]
 

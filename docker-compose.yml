@@ -5,7 +5,7 @@ services:
       context: ./build
       dockerfile: Dockerfile
     volumes: 
-      - disk:/opt/boxfuse-sample-java-war-hello
+      - disk:/opt/les
   myapp:
     build:
       context: ./app
