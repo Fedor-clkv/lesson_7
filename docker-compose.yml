@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     volumes: 
       - type: volume
-        source: diskd
+        source: diske
         target: /tmp
  
   myapp:
@@ -16,8 +16,8 @@ services:
       dockerfile: Dockerfile
     volumes:
       - type: volume
-        source: diskd
-        target: /usr/local/tomcat/webapps/
+        source: diske
+        target: /usr/local/tomcat/webapps
     ports:
       - 46850:8080
     depends_on:
@@ -27,4 +27,4 @@ services:
       - PATH=$CATALINA_HOME/bin:$PATH
 
 volumes:
-  diskd:
+  diske:
