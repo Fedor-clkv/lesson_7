@@ -1,17 +1,23 @@
 version: "3.2"
+
 services: 
   buildapps:
     build:
       context: ./build
       dockerfile: Dockerfile
     volumes: 
-      - diska:/opt/boxfuse-sample-java-war-hello/target:rw
+      - type: volume
+        source: diskb
+        target: /opt/boxfuse-sample-java-war-hello/target
+ 
   myapp:
     build:
       context: ./app
       dockerfile: Dockerfile
     volumes:
-      - diska:/tmp:rw
+      - type: volume
+        source: diskb
+        target: /tmp
     ports:
       - 46850:8080
     depends_on:
@@ -19,6 +25,7 @@ services:
     environment:
       - CATALINA_HOME=v/usr/local/tomcat
       - PATH=$CATALINA_HOME/bin:$PATH
+
 volumes:
   diska:
     external: true
