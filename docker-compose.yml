@@ -6,8 +6,8 @@ services:
       context: ./build
       dockerfile: Dockerfile
     volumes: 
-      - type: volume
-        source: diskb
+      - type: bind
+        source: diskc
         target: /opt/boxfuse-sample-java-war-hello/target
  
   myapp:
@@ -15,8 +15,8 @@ services:
       context: ./app
       dockerfile: Dockerfile
     volumes:
-      - type: volume
-        source: diskb
+      - type: bind
+        source: diskc
         target: /tmp
     ports:
       - 46850:8080
@@ -27,5 +27,9 @@ services:
       - PATH=$CATALINA_HOME/bin:$PATH
 
 volumes:
-  diskb:
-    external: true
+  diskc:
+    driver: local
+    driver_opts:
+      type: none
+      device: /tmp
+      o: bind
