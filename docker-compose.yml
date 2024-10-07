@@ -16,9 +16,8 @@ services:
       - type: volume
         source: disk
         target: /usr/local/tomcat/webapps
-    restart: always
     ports:
-      - 8080:8080
+      - 46850:8080
     depends_on:
       - buildapps
 volumes:
