@@ -17,7 +17,7 @@ services:
     volumes:
       - type: bind
         source: diskf
-        target: /usr/local/tomcat/webapps
+        target: /opt
     ports:
       - 46850:8080
     depends_on:
