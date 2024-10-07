@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     volumes: 
       - type: volume
-        source: dsk
+        source: vlm1
         target: /tmp
  
   myapp:
@@ -16,7 +16,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - type: bind
-        source: diskf
+        source: vlm1
         target: /opt
     ports:
       - 46850:8080
@@ -27,4 +27,4 @@ services:
       - PATH=$CATALINA_HOME/bin:$PATH
 
 volumes:
-  diskf:
+  vlm1:
