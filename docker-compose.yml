@@ -27,5 +27,5 @@ services:
       - PATH=$CATALINA_HOME/bin:$PATH
 
 volumes:
-  diska:
+  diskb:
     external: true
