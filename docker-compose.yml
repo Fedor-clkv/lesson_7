@@ -5,13 +5,20 @@ services:
       context: ./build
       dockerfile: Dockerfile
     volumes: 
-      - disk:/opt/les
+      - type: volume
+        source: disk
+        target: /tmp
+      - type: bind
+        source: /tmp
+        target: /tmp
   myapp:
     build:
       context: ./app
       dockerfile: Dockerfile
     volumes:
-      - disk:/tmp
+      - type: volume
+        source: disk
+        target: /opt/vol
     restart: always
     ports:
       - 8080:46850
@@ -20,4 +27,3 @@ services:
 volumes:
   disk:
     driver: local
-    name: disk
