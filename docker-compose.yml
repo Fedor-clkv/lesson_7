@@ -5,15 +5,18 @@ services:
       context: ./build
       dockerfile: Dockerfile
     volumes: 
-      - ./data:/opt
+      - disk:/opt/test
   myapp:
     build:
       context: ./app
       dockerfile: Dockerfile
     volumes:
-      - ./data:/opt
+      - disk:/opt
     restart: always
     ports:
       - 8080:46850
     depends_on:
       - buildapps
+volumes:
+  disk:
+    driver: local
