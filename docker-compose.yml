@@ -7,8 +7,8 @@ services:
       dockerfile: Dockerfile
     volumes: 
       - type: volume
-        source: diskd
-        target: /opt/boxfuse-sample-java-war-hello/target
+      - source: diskd
+      - target: /opt/boxfuse-sample-java-war-hello/target
  
   myapp:
     build:
@@ -16,8 +16,8 @@ services:
       dockerfile: Dockerfile
     volumes:
       - type: volume
-        source: diskd
-        target: /tmp
+      - source: diskd
+      - target: /tmp
     ports:
       - 46850:8080
     depends_on:
