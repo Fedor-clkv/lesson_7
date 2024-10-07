@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     volumes: 
       - type: volume
-        source: disk
+        source: diska
         target: /opt/boxfuse-sample-java-war-hello/target
   myapp:
     build:
@@ -14,12 +14,15 @@ services:
       dockerfile: Dockerfile
     volumes:
       - type: volume
-        source: disk
+        source: diska
         target: /tmp
     ports:
       - 46850:8080
     depends_on:
       - buildapps
+    environment:
+      - CATALINA_HOME=v/usr/local/tomcat
+      - PATH=$CATALINA_HOME/bin:$PATH
 volumes:
-  disk:
-    driver: local
+  diska:
+    external: true
