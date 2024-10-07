@@ -6,18 +6,14 @@ services:
       context: ./build
       dockerfile: Dockerfile
     volumes: 
-      - type: volume
-        source: vlm1
-        target: /tmp
- 
+      - vlm1:/tmp
+
   myapp:
     build:
       context: ./app
       dockerfile: Dockerfile
     volumes:
-      - type: bind
-        source: vlm1
-        target: /opt
+      - vlm1:/opt
     ports:
       - 46850:8080
     depends_on:
