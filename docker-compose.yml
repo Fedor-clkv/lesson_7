@@ -5,18 +5,19 @@ services:
       context: ./build
       dockerfile: Dockerfile
     volumes: 
-      - disk:/opt/test
+      - disk1:/opt/boxfuse-sample-java-war-hello
   myapp:
     build:
       context: ./app
       dockerfile: Dockerfile
     volumes:
-      - disk:/opt
+      - disk1:/opt/usr/local/tomcat/
     restart: always
     ports:
       - 8080:46850
     depends_on:
       - buildapps
 volumes:
-  disk:
-    driver: local
+  disk1:
+    external: true
+    name: disk
