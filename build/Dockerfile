@@ -7,7 +7,7 @@ RUN apt update -y && apt upgrade -y && apt install default-jdk -y && apt install
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
 WORKDIR /opt/boxfuse-sample-java-war-hello
 RUN mvn package
-#RUN cp /opt/boxfuse-sample-java-war-hello/target/hello-1.0.war /opt/vlm/hello-1.0.war
+RUN cp /opt/boxfuse-sample-java-war-hello/target/hello-1.0.war /opt/vol1/
 EXPOSE 8080
 CMD ["/bin/bash"]
 

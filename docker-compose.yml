@@ -19,3 +19,4 @@ services:
       - buildapps
 volumes:
   vlm:
+    extrnal: true
