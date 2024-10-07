@@ -5,13 +5,13 @@ services:
       context: ./build
       dockerfile: Dockerfile
     volumes: 
-      - vlm:/opt/vol1
+      - vlm:/opt
   myapp:
     build:
       context: ./app
       dockerfile: Dockerfile
     volumes:
-      - vlm:/opt/vol2
+      - vlm:/opt
     restart: always
     ports:
       - 8080:46850
@@ -19,4 +19,4 @@ services:
       - buildapps
 volumes:
   vlm:
-    extrnal: true
+    external: true
