@@ -6,8 +6,8 @@ services:
       context: ./build
       dockerfile: Dockerfile
     volumes: 
-      - type: bind
-        source: diskf
+      - type: volume
+        source: dsk
         target: /tmp
  
   myapp:
