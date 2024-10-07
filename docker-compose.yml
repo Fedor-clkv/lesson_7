@@ -5,17 +5,13 @@ services:
       context: ./build
       dockerfile: Dockerfile
     volumes: 
-      - type: volume
-        source: diska
-        target: /opt/boxfuse-sample-java-war-hello/target
+      - diska:/opt/boxfuse-sample-java-war-hello/target:rw
   myapp:
     build:
       context: ./app
       dockerfile: Dockerfile
     volumes:
-      - type: volume
-        source: diska
-        target: /tmp
+      - diska:/tmp:rw
     ports:
       - 46850:8080
     depends_on:
