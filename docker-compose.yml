@@ -15,7 +15,7 @@ services:
     volumes:
       - type: volume
         source: disk
-        target: /usr/local/tomcat/webapps
+        target: /tmp
     ports:
       - 46850:8080
     depends_on:
