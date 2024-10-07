@@ -7,10 +7,7 @@ services:
     volumes: 
       - type: volume
         source: disk
-        target: /tmp
-      - type: bind
-        source: /tmp
-        target: /tmp
+        target: /opt/boxfuse-sample-java-war-hello/target
   myapp:
     build:
       context: ./app
@@ -18,7 +15,7 @@ services:
     volumes:
       - type: volume
         source: disk
-        target: /opt/vol
+        target: /usr/local/tomcat/webapps
     restart: always
     ports:
       - 8080:46850
