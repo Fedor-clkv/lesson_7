@@ -6,21 +6,21 @@ services:
       context: ./build
       dockerfile: Dockerfile
     volumes: 
-      - vlm1:/tmp
+      - vlm1:/tmp/shared
 
   myapp:
     build:
       context: ./app
       dockerfile: Dockerfile
     volumes:
-      - vlm1:/opt
+      - vlm1:/tmp/shared
     ports:
       - 46850:8080
     depends_on:
       - buildapps
     environment:
-      - CATALINA_HOME=v/usr/local/tomcat
-      - PATH=$CATALINA_HOME/bin:$PATH
+      - CATALINA_HOME=/usr/local/tomcat
+      - PATH=${CATALINA_HOME}/bin:$PATH
 
 volumes:
   vlm1:
