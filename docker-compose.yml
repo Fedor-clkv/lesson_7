@@ -1,19 +1,19 @@
 version: "3"
 
 services: 
-  buildapps:
+  buildapp:
     build:
       context: ./build
       dockerfile: Dockerfile
     volumes: 
-      - vlm1:/tmp
+      - zaeb:/tmp
 
-  myapp:
+  myap:
     build:
       context: ./app
       dockerfile: Dockerfile
     volumes:
-      - vlm1:/tmp
+      - zaeb:/tmp
     ports:
       - 46850:8080
     depends_on:
@@ -23,4 +23,4 @@ services:
       - PATH=${CATALINA_HOME}/bin:$PATH
 
 volumes:
-  vlm1:
+  zaeb:
