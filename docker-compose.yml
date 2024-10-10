@@ -17,10 +17,11 @@ services:
     ports:
       - 46850:8080
     depends_on:
-      - buildapps
+      - buildapp
     environment:
       - CATALINA_HOME=/usr/local/tomcat
       - PATH=${CATALINA_HOME}/bin:$PATH
 
 volumes:
   zaeb:
+    driver: local
