@@ -6,14 +6,14 @@ services:
       context: ./build
       dockerfile: Dockerfile
     volumes: 
-      - vlm1:/tmp/shared
+      - vlm1:/tmp
 
   myapp:
     build:
       context: ./app
       dockerfile: Dockerfile
     volumes:
-      - vlm1:/tmp/shared
+      - vlm1:/tmp
     ports:
       - 46850:8080
     depends_on:

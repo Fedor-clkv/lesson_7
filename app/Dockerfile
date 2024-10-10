@@ -10,6 +10,6 @@ RUN tar xvfz apache-tomcat-10.0.20.tar.gz
 RUN rm -r apache-tomcat-10.0.20.tar.gz
 RUN cp -Rv /tmp/apache-tomcat-10.0.20/* /usr/local/tomcat/
 RUN rm -r /tmp/apache-tomcat-10.0.20/
-RUN cp /tmp/shared/hello-1.0.war /usr/local/tomcat/webapps/
+RUN cp /tmp/hello-1.0.war /usr/local/tomcat/webapps/
 EXPOSE 8080
 CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
